@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conversor de Medidas</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+</head>
+
+<body>
+    <h1>Conversor de Medidas</h1>
+    <label for="medida">Escolha o tipo de medida:</label>
+    <select id="medida" onchange="atualizarUnidades()">
+    <option value="massa">Massa</option>
+    <option value="temperatura">Temperatura</option>
+    <option value="comprimento">Comprimento</option>
+    </select>
+    <label for="unitFrom">Unidade de origem:</label>
+    <select id="unitFrom">
+    <option value="">Selecione a unidade</option>
+    <!-- Opções iniciais de massa -->
+    <optgroup id="unidades-massa">
+        <option value="g">Grama (g)</option>
+        <option value="kg">Quilograma (kg)</option>
+        <option value="lb">Libra (lb)</option>
+    </optgroup>
+    <!-- Opções iniciais de temperatura -->
+    <optgroup id="unidades-temperatura" >
+        <option value="c">Celsius (°C)</option>
+        <option value="f">Fahrenheit (°F)</option>
+        <option value="k">Kelvin (K)</option>
+    </optgroup>
+
+    <!-- Opções iniciais de comprimento -->
+    <optgroup id="unidades-comprimento" >
+        <option value="m">Metro (m)</option>
+        <option value="cm">Centímetro (cm)</option>
+        <option value="pol">Polegadas (pol)</option>
+    </optgroup>
+    </select>
+
+
+    <label for="unitTo">Unidade final:</label>
+    <select id="unitTo">
+    <option value="">Selecione a unidade</option>
+    <!-- opções finais de massa -->
+    <optgroup id="mass-unidades-to">
+        <option value="g">Grama (g)</option>
+        <option value="kg">Quilograma (kg)</option>
+        <option value="lb">Libra (lb)</option>
+    </optgroup>
+
+    <!-- opções finais de temperatura -->
+    <optgroup id="temperature-unidades-to">
+        <option value="c">Celsius (°C)</option>
+        <option value="f">Fahrenheit (°F)</option>
+        <option value="k">Kelvin (K)</option>
+    </optgroup>
+
+    <!-- opções finais de comprimento -->
+    <optgroup id="length-unidades-to">
+        <option value="m">Metro (m)</option>
+        <option value="cm">Centímetro (cm)</option>
+        <option value="pol">Polegadas (pol)</option>
+    </optgroup>
+    </select>
+
+    <label>Valor a ser convertido:</label>
+    <input type="submit" value="Converter" class="botao" id="enviar" />
+
+</body>
+
+</html>

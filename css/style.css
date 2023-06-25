@@ -1,0 +1,39 @@
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: #663399;
+    text-align: center;
+}
+
+label {
+    color: #333;
+}
+
+select,
+input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+}
+
+.botao {
+    background-color: #663399;
+    color: #fff;
+}
+
+.botao:hover {
+    background-color: #4b2c7b;
+    color: #fff;
+}
