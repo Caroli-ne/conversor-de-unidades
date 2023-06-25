@@ -1,10 +1,11 @@
 
+//Nessa parte, ajustei apenas funcionamento do Menu
 
 window.onload = function() {
     var measurementElement = document.getElementById('medida');
     measurementElement.onchange = atualizarUnidades;
 };
-
+// utilizei essa função para atualizar as unidades de medida 
 function atualizarUnidades() {
     var measurementElement = document.getElementById('medida');
     var unitFromElement = document.getElementById('unitFrom');
@@ -68,3 +69,89 @@ var unidades = {
     { value: 'pol', text: 'Polegadas (pol)' }
     ]
 };
+//Nessa parte, configurei a conversão
+
+//configuração da função que usei para converter e configurar o botão
+window.onload = function() {
+    var measurementElement = document.getElementById('medida');
+    measurementElement.onchange = atualizarUnidades;
+    var converterButton = document.getElementById('Converter');
+    converterButton.onclick = converter;
+};
+
+//função para converter os valores
+
+function converter() {
+    var unitFromElement = document.getElementById('unitFrom');
+    var unitToElement = document.getElementById('unitTo');
+    var valueElement = document.getElementById('numero-converter');
+    var resultElement = document.getElementById('exibe-resultado');
+
+    var unitFrom = unitFromElement.value;
+    var unitTo = unitToElement.value;
+    var value = parseFloat(valueElement.value);
+
+    if (isNaN(value)) {
+    resultElement.value = 'Insira um valor válido.';
+    return;
+    }
+
+    var medidaSelecionada = document.getElementById('medida').value;
+
+    //conversor de massa
+    if (medidaSelecionada === 'massa') {
+    if (unitFrom === 'g' && unitTo === 'kg') {
+        resultElement.value = value / 1000;
+    } else if (unitFrom === 'kg' && unitTo === 'g') {
+        resultElement.value = value * 1000;
+    } else if (unitFrom === 'g' && unitTo === 'lb') {
+        resultElement.value = value * 0.00220462;
+    } else if (unitFrom === 'lb' && unitTo === 'g') {
+        resultElement.value = value / 0.00220462;
+    } else if (unitFrom === 'kg' && unitTo === 'lb') {
+        resultElement.value = value * 2.20462;
+    } else if (unitFrom === 'lb' && unitTo === 'kg') {
+        resultElement.value = value / 2.20462;
+    } else {
+        resultElement.value = 'Conversão não suportada.';
+    }
+
+    //conversor de temperatura
+
+    } else if (medidaSelecionada === 'temperatura') {
+    if (unitFrom === 'c' && unitTo === 'f') {
+        resultElement.value = (value * 9 / 5) + 32;
+    } else if (unitFrom === 'f' && unitTo === 'c') {
+        resultElement.value = (value - 32) * 5 / 9;
+    } else if (unitFrom === 'c' && unitTo === 'k') {
+        resultElement.value = value + 273.15;
+    } else if (unitFrom === 'k' && unitTo === 'c') {
+        resultElement.value = value - 273.15;
+    } else if (unitFrom === 'f' && unitTo === 'k') {
+        resultElement.value = (value + 459.67) * 5 / 9;
+    } else if (unitFrom === 'k' && unitTo === 'f') {
+        resultElement.value = (value * 9 / 5) - 459.67;
+    } else {
+        resultElement.value = 'Conversão não suportada.';
+    }
+
+    //conversor de comprimento
+
+    } else if (medidaSelecionada === 'comprimento') {
+    if (unitFrom === 'm' && unitTo === 'cm') {
+        resultElement.value = value * 100;
+    } else if (unitFrom === 'cm' && unitTo === 'm') {
+        resultElement.value = value / 100;
+    } else if (unitFrom === 'm' && unitTo === 'pol') {
+        resultElement.value = value * 39.3701;
+    } else if (unitFrom === 'pol' && unitTo === 'm') {
+        resultElement.value = value / 39.3701;
+    } else if (unitFrom === 'cm' && unitTo === 'pol') {
+        resultElement.value = value / 2.54;
+    } else if (unitFrom === 'pol' && unitTo === 'cm') {
+        resultElement.value = value * 2.54;
+    } else {
+        resultElement.value = 'Conversão não suportada.';
+    }
+    }
+}
