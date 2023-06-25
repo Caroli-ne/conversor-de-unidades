@@ -10,15 +10,25 @@ function atualizarUnidades() {
     var measurementElement = document.getElementById('medida');
     var unitFromElement = document.getElementById('unitFrom');
     var unitToElement = document.getElementById('unitTo');
+    var valueElement = document.getElementById('numero-converter');
+    var resultElement = document.getElementById('exibe-resultado');
+
     // limpa as opções
     unitFromElement.innerHTML = '';
     unitToElement.innerHTML = '';
+
     // seleção padrão
+
     var optionDefault = document.createElement('option');
     optionDefault.value = '';
     optionDefault.text = 'Selecione a unidade';
     unitFromElement.appendChild(optionDefault.cloneNode(true));
     unitToElement.appendChild(optionDefault.cloneNode(true));
+    
+    //limpa o valor inserido e o resultado ao selecionar uma nova unidade
+    valueElement.value = '';
+    resultElement.value = '';
+
     // mostra as unidades correspondentes a medida selecionada
     var medidaSelecionada = measurementElement.value;
     var unidadesFrom = unidades[medidaSelecionada];
