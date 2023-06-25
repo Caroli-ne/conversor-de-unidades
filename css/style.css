@@ -37,3 +37,21 @@ input {
     background-color: #4b2c7b;
     color: #fff;
 }
+#unidades-comprimento-to {
+    display: none;
+}
+#unidades-massa-to{
+    display: none;
+}
+#unidades-temperatura-to {
+    display: none;
+}
+#unidades-comprimento {
+    display: none;
+}
+#unidades-massa{
+    display: none;
+}
+#unidades-temperatura {
+    display: none;
+}
