@@ -1,4 +1,4 @@
-import formulaconversor from "./formulas";
+
 
 window.onload = function() {
     var measurementElement = document.getElementById('medida');
