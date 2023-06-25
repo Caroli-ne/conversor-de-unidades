@@ -15,7 +15,7 @@ h1 {
 label {
     color: #333;
 }
-
+/*configuração do input em geral*/
 select,
 input {
     display: block;
@@ -27,7 +27,7 @@ input {
     border-radius: 10px;
     color: #333;
 }
-
+/*configuração do botão*/
 .botao {
     background-color: #663399;
     color: #fff;
@@ -37,6 +37,7 @@ input {
     background-color: #4b2c7b;
     color: #fff;
 }
+/* Utilizei essa parte para "esconder" as opções disponíveis, de forma que não aparecessem até que fossem selecionadas*/
 #unidades-comprimento-to {
     display: none;
 }
