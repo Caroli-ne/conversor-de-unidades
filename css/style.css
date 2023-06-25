@@ -17,14 +17,14 @@ label {
 }
 
 select,
-input[type="submit"] {
+input {
     display: block;
     margin: 10px auto;
     padding: 5px;
     width: 200px;
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     color: #333;
 }
 
