@@ -33,17 +33,17 @@ function atualizarUnidades() {
     var medidaSelecionada = measurementElement.value;
     var unidadesFrom = unidades[medidaSelecionada];
     var unidadesTo = unidades[medidaSelecionada + '-to'];
-    for (var i = 0; i < unidadesFrom.length; i++) {
-    var optionFrom = document.createElement('option');
-    optionFrom.value = unidadesFrom[i].value;
-    optionFrom.text = unidadesFrom[i].text;
-    unitFromElement.appendChild(optionFrom);
+        for (var i = 0; i < unidadesFrom.length; i++) {
+        var optionFrom = document.createElement('option');
+        optionFrom.value = unidadesFrom[i].value;
+        optionFrom.text = unidadesFrom[i].text;
+        unitFromElement.appendChild(optionFrom);
     }
     for (var j = 0; j < unidadesTo.length; j++) {
-    var optionTo = document.createElement('option');
-    optionTo.value = unidadesTo[j].value;
-    optionTo.text = unidadesTo[j].text;
-    unitToElement.appendChild(optionTo);
+        var optionTo = document.createElement('option');
+        optionTo.value = unidadesTo[j].value;
+        optionTo.text = unidadesTo[j].text;
+        unitToElement.appendChild(optionTo);
     }
 }
 
